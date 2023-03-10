@@ -181,7 +181,7 @@ searchInput.addEventListener('submit', onSearchInputClick);
 
 // приносить дані за пошуковим запитом
 export function onSearchInputClick(event) {
- evt = event;
+const evt = event;
 // текущий поиск - по ключевому слову
  changeSearchType('searchInput')
 
