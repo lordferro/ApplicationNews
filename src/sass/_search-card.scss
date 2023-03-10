@@ -1,0 +1,168 @@
+.card {
+  width: 100%;
+  height: 630px;
+  position: relative;
+  margin-bottom: 28px;
+
+  @include tablet {
+    width: 353px;
+    height: 675px;
+  }
+
+  @include desktop {
+    width: 395px;
+  }
+
+  @include desktop {
+    width: 395px;
+  }
+
+  &__img-container {
+    position: relative;
+  }
+
+  &__img {
+    height: 395px;
+    object-fit: cover;
+    object-position: center;
+
+  }
+
+  &__section-name {
+    position: absolute;
+    z-index: 3;
+    top: 44px;
+    left: 0;
+    padding: 4px 8px;
+    background: rgba(68, 64, 247, 0.7);
+    border-radius: 0px 4px 4px 0px;
+
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.3;
+    text-align: center;
+
+    color: #ffffff;
+  }
+
+  &__btn {
+    position: absolute;
+    right: 8px;
+    bottom: 12px;
+    display: flex;
+    padding: 6px 25px 6px 12px;
+  }
+
+  &__title {
+    margin: 20px 0;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 1.38;
+    letter-spacing: -0.01em;
+
+
+    @include tablet {
+      font-size: 32px;
+    }
+  }
+
+  &__text {
+    margin-bottom: 20px;
+    text-align: left;
+
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.36;
+
+
+    @include tablet {
+      font-size: 16px;
+    }
+  }
+
+  &__bottom {
+    z-index: 3;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__date {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.36;
+
+    color: #a8a8a8;
+
+    @include tablet {
+      font-size: 16px;
+    }
+  }
+
+  &__read-more-search {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.36;
+
+    color: #4440f7;
+
+    @include tablet {
+      font-size: 16px;
+    }
+  }
+
+  &__btn {
+    z-index: 3;
+    border: none;
+    background: #f4f4f4;
+    border-radius: 20px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.36;
+    text-align: center;
+
+    color: #111321;
+  }
+
+  &__blur {
+    display: none;
+    z-index: 2;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(244, 244, 244, 0.4);
+  }
+
+  &__already-read {
+    position: absolute;
+    z-index: 4;
+    top: 20px;
+    right: 20px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.38;
+
+    color: #06be65;
+  }
+}
+
+.fav-icon{
+  z-index: 4;
+  position: absolute;
+  right: 15;
+  bottom: 18;
+}
+.fav-icon-add{
+fill: none;
+stroke: #4440f7
+}
+.fav-icon-remove{
+  fill: #4440f7
+}

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Read</title>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&family=Poppins&family=Roboto&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="./sass/index.scss" />
+    <script type="module" src="./read.js"></script>
+</head>
+<body data-current-page="read" class="body">
+    <include src="./partials/header.html"></include>
+
+    <div class="without-news_container">
+        <h1 class="without-news_title"> We didn't find the news you read </h1>
+        <picture class="without-news__picture">
+            <source srcset="./images/noNews_desktop.png" media="(min-width: 1280px)">
+            <source srcset="./images/noNews_tablet.png" media="(min-width: 768px)">
+            <source srcset="./images/noNews_mobile.png" media="(min-width: 320px)">
+            <img src="./images/noNews_mobile.png" alt="No news founded/">
+        </picture>
+    </div>
+
+    <include src="./partials/mob-menu.html"></include>
+</body>
+</html>

@@ -1,0 +1,28 @@
+.news_container {
+  margin-top: 40px;
+
+  @include tablet {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 30px;
+
+    margin-top: 48px;
+  }
+
+  @include desktop {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 30px;
+
+    margin-top: 60px;
+  }
+}
+.weatherWidget {
+    grid-area: 1/1;
+    @include tablet {
+grid-area: 1/2;
+  }
+    @include desktop {
+grid-area: 1/3;
+  }
+}

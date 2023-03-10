@@ -1,0 +1,133 @@
+.pagination__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 150px;
+}
+
+.pagenumbers {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+
+  button {
+    width: 28px;
+    height: 28px;
+    position: relative;
+    appearance: none;
+    border: 1px solid #4440f6;
+    outline: none;
+    cursor: pointer;
+    margin-right: 10px;
+
+    transition: 0.5s;
+    color: #111321;
+
+    font-family: 'Manrope', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.37;
+    font-style: normal;
+    background-color: #f4f4f4;
+  }
+
+  button:hover {
+    background-color: #4440f7;
+    color: #f4f4f4;
+    border-radius: 2px;
+  }
+
+  button.active {
+    background-color: #4440f7;
+    color: #f4f4f4;
+    border-radius: 2px;
+  }
+}
+
+@media screen and (min-width: 480px) {
+  .pagenumbers button {
+    width: 33px;
+    height: 31px;
+    margin-right: 8px;
+  }
+}
+
+.pagination__container_pages {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.pagination_svg {
+  width: 6px;
+  height: 8px;
+
+  fill: #111321;
+}
+@media screen and (min-width: 480px) {
+  .pagination_svg {
+    width: 8px;
+    height: 13px;
+  }
+}
+.pag-arrow {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 72px;
+  height: 28px;
+  margin-right: 8px;
+  background-position: center;
+  border: 1px solid #4440f6;
+  background-color: #f4f4f4;
+  transition: background-color 0.25s ease-in;
+  border-radius: 2px;
+
+  &:hover {
+    background-color: #4440f7;
+    color: #f4f4f4;
+    border-radius: 2px;
+  }
+
+  &:active {
+    background-color: #4cbaff;
+  }
+}
+
+@media screen and (min-width: 480px) {
+  .pag-arrow {
+    width: 82px;
+    height: 31px;
+  }
+}
+
+.threeDots {
+  display: flex;
+  width: 13px;
+  height: 19px;
+  margin: 8px;
+
+  border: none;
+  background-color: #f4f4f4;
+  display: inline-block;
+  text-align: center;
+  padding: 10px 5px 1px 5px;
+}
+
+@media screen and (min-width: 768px) {
+  .threeDots {
+    display: inline-block;
+  }
+}
+
+.hide {
+  display: none;
+}
+
+.disabled-arrow {
+  pointer-events: none;
+  background-color: #c4c0c0;
+}

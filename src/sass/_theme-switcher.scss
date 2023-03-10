@@ -1,0 +1,184 @@
+
+
+$iconStrokeColor: #5F6775;
+$iconAccentColor: #4B48DB;
+
+body {  
+  // transition: background-color 0.5s ease, color 0.5s ease;
+  background-color: $backgroundColor;
+  color: $primaryTextColor;
+}
+
+// a {
+  // background-color: inherit;
+  // background: none;
+  // transition: background-color 0.5s ease, color 0.5s ease;
+// }
+
+.sun_btn,
+.sun_btn--mobile {
+  fill: $backgroundColor;
+  stroke: $iconAccentColor;
+  stroke-width: 1.3;
+}
+
+.moon_btn,
+.moon_btn--mobile {
+  fill: $backgroundColor;
+  stroke: $iconStrokeColor;
+  stroke-width: 1.3;
+}
+
+.switches .text_light {
+  color: $iconAccentColor;
+}
+  
+.switches .text_dark {
+  color: $iconStrokeColor;
+}
+
+.search_btn {
+  fill: $primaryTextColor;
+  stroke: $primaryTextColor;
+}
+
+.wrapper__head {
+  stroke: $primaryTextColor;
+  fill: $primaryTextColor;
+}
+
+.menu_mob_btn {
+  color: $primaryTextColor;
+  fill: $primaryTextColor;
+  stroke: $primaryTextColor;
+}
+
+.search_mob_btn {
+  color: $primaryTextColor;
+}
+
+.dark .backdrop {
+  background-color: $backgroundColorDarkTheme;
+}
+
+// .mob-menu__wrapper {
+//   color: $primaryTextColor;
+//   background-color: $backgroundColor;
+//   // opacity: 1;
+// }
+
+.dark .calendar-title {
+  color: $primaryTextColorDarkTheme
+}
+
+.dark .wrapper {
+  background-color: $backgroundColorDarkTheme;
+}
+
+.dark {
+  background-color: $backgroundColorDarkTheme; /* Dark background color */
+  color: $primaryTextColorDarkTheme; /* Light text color */
+}
+
+.dark .card__text,
+.dark .card__title {
+color: $primaryTextColorDarkTheme;
+}
+
+.dark .link {
+  background-color: $backgroundColorDarkTheme; /* Dark background color */
+  color: $primaryTextColorDarkTheme;
+}
+
+.dark .search_input {
+  border-color: $primaryTextColorDarkTheme; /* Dark background color */
+  background-color: $backgroundColorDarkTheme;
+  color: $primaryTextColorDarkTheme;
+}
+
+.dark .sun_btn,
+.dark .sun_btn--mobile {
+  fill: $backgroundColorDarkTheme;
+  stroke: $iconStrokeColor;
+}
+
+// .dark .sun_btn--mobile {
+//   fill: $backgroundColorDarkTheme;
+//   stroke: $iconStrokeColor;
+// }
+
+.dark .moon_btn,
+.dark .moon_btn--mobile  {
+  fill: $backgroundColorDarkTheme;
+  stroke: $iconAccentColor;
+}
+
+// .dark .moon_btn--mobile {
+//   fill: $iconStrokeColor;
+//   stroke: $backgroundColorDarkTheme;
+// }
+
+.dark .switches .text_light{
+  color: $primaryTextColorDarkTheme;
+  opacity: 0.4;
+}
+  
+.dark .switches .text_dark{
+  color: $accentColor;
+}
+
+.dark .search_btn {
+  fill: $backgroundColor;
+  stroke: $backgroundColor;
+}
+
+.dark .search_input {
+  color: $primaryTextColorDarkTheme;
+}
+
+.dark .search_input::placeholder{
+  color: $primaryTextColorDarkTheme;
+  // opacity: 0.4;
+}
+
+.dark .date-field {
+  border-color: $backgroundColor;
+}
+
+.dark .data_selected {
+  color: $primaryTextColorDarkTheme; 
+  opacity: 0.4;
+}
+
+.dark .wrapper__head {
+  stroke: $primaryTextColorDarkTheme;
+  fill: $primaryTextColorDarkTheme;
+}
+
+.dark .menu_mob_btn {
+  fill: $primaryTextColorDarkTheme;
+  stroke: $primaryTextColorDarkTheme;
+}
+
+.dark .search_mob_btn {
+  fill: $primaryTextColorDarkTheme;
+  stroke: $primaryTextColorDarkTheme;
+}
+
+.dark .pagination__container_pages {
+  color: $primaryTextColor;
+}
+
+.dark .without-news_title {
+  color: $primaryTextColorDarkTheme;
+}
+
+// .dark .section-title_btn {
+//   color: $primaryTextColorDarkTheme;
+//   fill: $primaryTextColorDarkTheme;
+// }
+
+.dark .checkbox-btn {
+  color: $primaryTextColorDarkTheme;
+  fill: $primaryTextColorDarkTheme;
+}

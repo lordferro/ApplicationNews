@@ -1,0 +1,125 @@
+/*сброс margin*/
+h1,
+h2,
+h3,
+p,
+ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/*основной текст*/
+body {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.4;
+
+}
+
+:root {
+  /*цвет кнопок, hover и focus элементов*/
+  --color-for-hovered: #2196f3;
+
+  /* background категории */
+  --color-hover: #4440F6;
+
+  /* цвет текста статьи, заголовки, favorite */
+  --color-text: #111321;
+  /* цвет текста категории */
+  --color-category: #4B48DB;
+  /* цвет текст searching */
+  --color-text-searching: #FFFFFF;
+  /* цвет даты */
+  --color-text-data: #A8A8A8;
+}
+
+
+/* background: #4440F6;
+ */
+
+
+/* шрифт заголовка */
+h2 {
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+
+}
+
+/* шрифт категорий */
+.card__header {
+font-size: 12px;
+line-height: 1.3;
+text-align: center;
+
+border: 1px solid var(--color-category);
+border-radius: 20px;
+
+color: var(--color-category);
+}
+
+/* надпись searching */
+.card__job {
+font-weight: 500;
+font-size: 12px;
+line-height: 1.3;
+text-align: center;
+
+color: var(--color-text-searching);
+}
+
+/* шрифт favorite */
+.card__favorite {
+font-weight: 500;
+font-size: 12px;
+line-height: 1.3;
+text-align: center;
+
+color: var(--color-text);
+}
+
+/* шрифт даты */
+.card__text {
+text-align: right;
+
+}
+
+/* read more */
+.card__more {
+color: #4440F7;
+}
+
+.list {
+  /*display: flex;
+  justify-content: space-between;*/
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* карточки */
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* .container {
+  width: 1200px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin: 0 auto;
+}  */
+
+/* 
+.section {
+  padding-top: 50px;
+  padding-bottom: 50px;
+} */ 

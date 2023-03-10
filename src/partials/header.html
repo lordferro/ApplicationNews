@@ -1,0 +1,63 @@
+
+    <header class="header">
+        <div class="container main-nav">
+
+            <nav class="header-nav">
+                <a class="logo link" href="./index.html" lang="en">News</a>
+                <ul class="nav list">
+                    <li class="nav_item"><a class="nav_link link" data-href="index" href="./index.html">Home</a></li>
+                    <li class="nav_item"><a class="nav_link link" data-href="favorite" href="./favorite.html">Favorite</a></li>
+                    <li class="nav_item"><a class="nav_link link" data-href="read" href="./read.html">Read</a></li>
+                </ul>
+            </nav>
+                                 <!-- пошукова строка -->
+            <form class="search_form" id="search_form">
+                <label class="label_search">
+                    <input class="search_input" type="text" name="searchQuery" autocomplete="off" placeholder="Search |" />
+                </label>
+
+                <button class="search_btn" type="submit"><svg class="search_icons" width="17" height="16">
+                        <use href="./images/symbol-defs.svg#icon-Search"></use></svg>
+                </button>
+            </form>
+                                  <!-- перемикач -->
+            <div class="switches">
+
+                <p class="text_light">Light</p>
+
+                <button class="sun_btn" type="submit"><svg class="sun_icons" width="21" height="21">
+                        <use href="./images/symbol-defs.svg#icon-Sun"></use></svg>
+                </button>
+
+                <label class="switch">
+                    <input type="checkbox" class="switch_input" />
+                    <span class="switch_slider"></span>
+                </label>
+
+                <button class="moon_btn" type="submit"><svg class="moon_icons" width="21" height="21">
+                        <use href="./images/symbol-defs.svg#icon-Moon"></use></svg>
+                </button>
+
+                <p class="text_dark">Dark</p>
+                            
+            </div>
+
+                               <!-- кнопки для мобільного меню -->
+            <div class="btn_mob">
+
+                <button class="search_mob_btn" type="submit"><svg class="search_icons" width="17" height="16">
+                        <use href="./images/symbol-defs.svg#icon-Search"></use></svg>
+                </button>
+
+                <button class="menu_mob_btn" type="submit"><svg class="menu_icons" width="24" height="24">
+                        <use href="./images/symbol-defs.svg#icon-menu-black"></use></svg>
+                </button>
+
+            </div>
+ 
+        </div>
+        <script type="module" src="./js/currentPage.js"></script>
+    </header> 
+
+
+    

@@ -1,0 +1,210 @@
+.weatherWidget {
+  width: 288px;
+  height: 469px;
+
+  margin-bottom: 28px;
+
+  border-radius: 4px;
+  background-color: #4440f7;
+  text-align: center;
+  color: #ffffff;
+
+  @include tablet {
+    width: 353px;
+    height: 675px;
+  }
+  @include desktop {
+    width: 395px;
+    height: 675px;
+  }
+}
+
+// Погода текущая
+
+.temperature {
+  display: inline-block;
+  padding-right: 5px;
+
+  border-right: 1px solid #ffffff;
+
+  @include fontShort(55, 64);
+
+  @include tablet {
+    @include fontShort(64, 75);
+    padding-right: 8px;
+  }
+  @include desktop {
+    padding-right: 8px;
+  }
+}
+
+.city-container {
+  display: inline-block;
+  margin-top: 32px;
+  margin-left: 15px;
+  text-align: left;
+
+  @include tablet {
+    margin-top: 40px;
+  }
+}
+
+.weather-condition {
+  @include fontShort(24, 28);
+  margin-bottom: 5px;
+
+  @include tablet {
+    margin-bottom: 0;
+    @include fontShort(36, 42);
+  }
+}
+
+.weather-city {
+  display: flex;
+  max-width: 110px;
+
+  padding: 9px 8px 9px 8px;
+  align-items: center;
+
+  background: rgba(254, 254, 255, 0.3);
+  border-radius: 10px;
+
+  @include fontShort(14, 16);
+
+  @include tablet {
+    @include fontShort(20, 23);
+    max-width: 150px;
+  }
+}
+
+.city-icon {
+  margin-right: 4px;
+  width: 18px;
+  height: 18px;
+
+  @include tablet {
+    width: 27px;
+    height: 27px;
+  }
+}
+
+.weather-icon {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 22px;
+  @include tablet {
+    width: 251px;
+    height: 240px;
+
+    margin-top: 30px;
+  }
+}
+
+.date-container {
+  @include fontShort(28, 33);
+  text-align: center;
+  @include tablet {
+    @include fontShort(36, 42);
+    margin-top: 5px;
+  }
+}
+
+.weatherBtn {
+  margin-top: 18px;
+  border: none;
+
+  padding: 8px 14px;
+
+  color: inherit;
+  @include fontShort(16, 19);
+
+  background: rgba(254, 254, 255, 0.3);
+  border-radius: 10px;
+
+  @include tablet {
+    @include fontShort(20, 23);
+    margin-top: 28px;
+  }
+}
+
+// погода на 7 дней
+
+.weather-city--week {
+  display: inline-block;
+  max-width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 25px;
+  margin-bottom: 20px;
+
+  @include fontShort(14, 16);
+
+  background: rgba(5, 250, 250, 0.315);
+
+  @include tablet {
+    @include fontShort(24, 30);
+  }
+}
+
+.day-condition {
+  width: 80px;
+  padding: 5px;
+  background: rgba(107, 207, 207, 0.315);
+  border-radius: 5px;
+}
+
+.days-list {
+  margin-bottom: 10px;
+}
+
+.week-day__item {
+  margin-top: 10px;
+
+  display: flex;
+  align-items: baseline;
+
+  @include fontShort(12, 14);
+
+  @include tablet {
+    @include fontShort(18, 24);
+    margin-top: 15px;
+  }
+}
+.week-day {
+  width: 40px;
+  padding: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  background: rgba(5, 250, 250, 0.315);
+  border-radius: 5px;
+
+  @include tablet {
+    width: 50px;
+  }
+}
+
+.day-temp {
+  width: 60px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 5px;
+
+  background: rgba(244, 248, 245, 0.3);
+  border-radius: 5px;
+
+  @include tablet {
+    width: 80px;
+  }
+}
+.night-temp {
+  width: 70px;
+  margin-right: auto;
+  padding: 5px;
+
+  background: rgba(7, 19, 10, 0.3);
+  border-radius: 5px;
+
+  @include tablet {
+    width: 100px;
+  }
+}

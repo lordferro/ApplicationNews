@@ -1,1 +1,31 @@
 @import '~node_modules/modern-normalize/modern-normalize.css';
+
+$backgroundColor: #f4f4f4;
+$accentColor: #4440f6;
+$primaryTextColor: #111321;
+$secondaryTextColor: #a8a8a8;
+$primaryTextColorDarkTheme: #f4f4f4;
+$backgroundColorDarkTheme: #2e2e2e;
+
+.container {
+  padding-left: 16px;
+  padding-right: 16px;
+  width: 320px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1279.98px) {
+  .container {
+    width: 768px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .container {
+    width: 1280px;
+  }
+}
+
+.without-news_container {
+  display: none;
+}

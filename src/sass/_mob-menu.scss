@@ -1,0 +1,130 @@
+@import '~node_modules/modern-normalize/modern-normalize.css';
+body {
+
+}
+a {
+    text-decoration: none;
+}
+p {
+    margin: 0;
+}
+.backdrop {
+    position: fixed;
+    z-index: 10;
+    overflow: hidden;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+    transition: opacity 300ms linear, visibility 300ms linear;
+}
+// Просто давай этот класс если хочешь спрятать модалку
+.is-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+.wrapper {
+    display: flex;
+    background: $backgroundColor;
+    flex-direction: column;
+    justify-content: space-between;
+
+    height: 100vh;
+
+}
+.flex {
+    display: flex;
+    align-items: center;
+}
+
+
+.bg-color {
+    background: $backgroundColor;
+    height: 100vh;
+
+}
+.wrapper__head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-height: 33px;
+    margin-bottom: 68px;
+    padding: 24px 16px 0px 16px;
+}
+.wrapper__head-h1 {
+    color: $primaryTextColor;
+    margin: 0;
+}
+.wrapper__link {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    flex-direction: column;
+
+    gap: 24px;
+
+}
+.wrapper__link-item {
+    display: flex;
+    align-items: center;
+    height: 44px;
+    padding: 0 16px;
+
+    justify-content: space-between;
+}
+.wrapper__link-text {
+    color: inherit;
+    padding: 0;
+    margin-left: 14px;
+
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 21.86px;
+}
+.wrapper__link-use {
+    display: flex;
+    border: 1px solid $primaryTextColorDarkTheme;
+    border-radius: 50%;
+}
+
+.bg-color-active  {
+    background-color: $accentColor;
+
+}
+
+.mob-link--color-active {
+    color: $primaryTextColorDarkTheme;
+}
+
+.svg-item {
+    height: 32px;
+}
+.svg-rigth {
+    height: 12px;
+}
+.rigth-two {
+    display: none;
+}
+.rigth-tree {
+    display: none;
+}
+.wrapper__button {
+    display: flex;
+    justify-content: flex-start;
+    height: 21px;
+
+    padding-left: 16px;
+    margin-bottom: 18px;
+}
+
+//---------------Button + Label
+//-----------moved to _switch.scss
+.switch {
+    margin: 0 10px;
+}
+
+.switch_input:checked+.switch_slider::before {
+    list-style-type: none;
+}

@@ -1,0 +1,184 @@
+// должно быть в паршеле родителя
+.search_container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 24px; //mobile
+  margin-top: 24px;
+  padding-bottom: 40px;
+  @include tablet {
+    gap: calc(148px + 111px);
+    margin-top: 28px;
+    margin-bottom: 48px;
+    padding-bottom: 0px;
+  }
+  @include desktop {
+    margin-bottom: 60px;
+  }
+}
+  
+.section__categories {
+  display: flex;
+  flex-direction:row;
+  align-items: flex-start;
+}
+
+.categories__wrap {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  @include tablet {
+    gap: 16px;
+  }
+}
+
+.dropdown-positioner {
+  position: relative;
+}
+
+.section-btn,
+.other-btn {
+  @include fontCategs;
+  line-height: 16px;
+  text-align: center;
+  color: #4440F7;
+  flex-basis: 112px;
+  max-width: 148px;
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+  gap: 10px; // для стрелочки
+  padding: 8px 21px;
+  
+  background: #FFFFFF;
+  border: 1px solid #4B48DB;
+  border-radius: 20px;
+}
+
+.section-btn:hover,
+.other-btn:hover {
+  background-color: #4440F6;
+  color: #FFFFFF;
+  cursor: pointer;
+}
+
+/* Стили для кнопки,*/
+.btn-active {
+  background-color: #4440F6;
+  color: #FFFFFF;
+}
+
+.other-btn {
+  position: absolute;
+  z-index: 10;
+}
+
+.dropdown{
+  position: absolute;
+  min-width: 148px;
+  height: 420px;
+  z-index: 2;
+  overflow: hidden;
+    @include tablet {
+    min-width: 168px;
+  }
+}
+
+.dropdown-content {
+  position: absolute;
+  top: 31px;
+  left: 0;
+  max-width: 148px;
+  max-height: 380px;
+  overflow-y: auto;
+  background-color: #F8F8F8;
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 30px;
+  padding: 14px 14px;
+  z-index: 6;
+  transform: translateY(-120%);
+    @include tablet {
+    max-width: 168px;
+    padding: 14px 24px; //
+  }
+  &-close {
+      transform: translateY(-120%);    
+      transition-property: transform;
+      transition-duration: 500ms;
+      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);  
+  }
+  &-open {
+      transform: translateY(0);    
+      transition-property: transform;
+      transition-duration: 500ms;
+      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);  
+  }
+}
+  
+  /* Стили для элементов списка */
+  .dropdown-item {
+    @include fontCategs;
+    background: none;
+    border: none;
+    white-space: nowrap;
+    display: flex;
+    width: 100%;
+    text-align: left;
+    color: #4440F6;
+    padding: 6px 0;
+    // gap: 12px;
+    &:first-child{
+      padding: 0 0 6px;
+    }
+    &:last-child{
+      padding: 6px 0 0
+    }
+  }
+
+.section-btn,
+.other-btn,
+.dropdown-item {
+  max-width:118px;
+  white-space: nowrap; 
+  overflow: hidden; 
+  text-overflow: ellipsis; /* отображение троеточия в конце обрезанного*/
+    @include tablet {
+    max-width: 168px;
+    }
+  }
+
+  /* Стили для выделенного элемента списка */
+  .dropdown-item:hover,
+  .dropdown-item:active {
+  text-decoration: underline;
+  } 
+  
+  // .dropdown-ruler {
+  //   position: absolute;
+  //   top: calc(40px + 30px); /* учитываем отступ от верхней границы списка */
+  //   left: calc(300px + 10px + 10px); /* добавляем 10px для отступа справа от списка */
+  //   width: 6px;
+  //   height: calc(100% - 60px); /* учитываем отступы сверху и снизу списка */
+  //   background-color: #a8a8a8;
+  //   opacity: 0.3;
+  // }
+
+   // /* Изменение внешнего вида полосы прокрутки */
+  // .dropdown-content::-webkit-scrollbar {
+  //   position: relative;
+  //   width: 6px;
+  //   background-color: #F8F8F8;
+  //   top: 30px;
+  //   bottom: 30px;
+  //   right: -10px; /* 10px правее раскрывающегося списка */
+  // }
+  
+  // .dropdown-content::-webkit-scrollbar-thumb {
+  //   background-color: #000000;
+  //   border-radius: 3px;
+  // }
+
+
