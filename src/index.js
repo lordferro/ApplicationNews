@@ -204,7 +204,7 @@ if(localStorage.getItem('searchQueryFromFavorites') === null) {
       pagRefs.next.removeEventListener('click', onPaginationSearchNextClick);
 
       //   загальна кількість знайдених новин
-      totalNews = response.meta.hits;
+     const totalNews = response.meta.hits;
       // это нужно для избранного
       resultsArr = response.docs;
 
