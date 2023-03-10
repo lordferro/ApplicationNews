@@ -4,7 +4,6 @@ import { ThemeSwitcher } from './js/themeSwitcher';
 import {createWidget} from './js/weatherApi';
 import { calendar } from './js/calendar';
 import { categRefs } from'./js/categories';
-import'./js/categories';
 import {PaginationLogicPopular} from './js/paginationLogicPopular';
 import {PaginationLogicCategory} from './js/paginationLogicCategory';
 import {PaginationLogicSearch} from './js/paginationLogicSearch';
