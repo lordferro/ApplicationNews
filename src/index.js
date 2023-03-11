@@ -127,6 +127,7 @@ export function getPopularNews() {
         } else {
           const markupAllPopular = popularNewsPagination.getMarkupAll();
           populateNews(markupAllPopular);
+           pagRefs.next.classList.remove('hide');
         }
       }
     })
@@ -137,6 +138,8 @@ export function getPopularNews() {
 
 // приносить дані новин по категоріям
 export function onCategoryClick(evt) {
+
+ searchInput.reset();
   document.querySelector('.without-news_container').style.display = 'none';
   // текущий поиск - по категориям
   changeSearchType('category');
@@ -162,6 +165,7 @@ export function onCategoryClick(evt) {
   newsFetchApi
     .fetchBySection()
     .then(({ data }) => {
+
       pagRefs.prev.removeEventListener('click', onPaginationCategoryPrevClick);
       pagRefs.next.removeEventListener('click', onPaginationCategoryNextClick);
       //   загальна кількість знайдених новин, тут она врёт, на самом деле приходит меньше чем есть.
@@ -206,6 +210,7 @@ searchInput.addEventListener('submit', onSearchInputClick);
 
 // приносить дані за пошуковим запитом
 export function onSearchInputClick(event) {
+   pagRefs.next.classList.add('hide');
   const evt = event;
   // текущий поиск - по ключевому слову
   changeSearchType('searchInput');
@@ -217,8 +222,11 @@ export function onSearchInputClick(event) {
       //  значення пошукового запиту
       newsFetchApi.searchQuery = evt.target.elements.searchQuery.value;
     }
+    searchNewsPagination.page = 0;
     newsFetchApi.resetPage();
     document.querySelector('.without-news_container').style.display = 'none';
+    pagRefs.next.classList.add('hide');
+     pagRefs.prev.classList.add('hide');
   } else {
     newsFetchApi.searchQuery = localStorage.getItem('searchQueryFromFavorites');
   }
@@ -282,6 +290,7 @@ export function onSearchInputClick(event) {
         // ++++++++++++++++++++++
         const markupAllSearch = searchNewsPagination.getMarkupAll();
         populateNews(markupAllSearch);
+         pagRefs.next.classList.remove('hide');
       }
     })
     .catch(error => console.log(error));

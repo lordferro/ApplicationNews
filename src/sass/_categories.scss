@@ -78,6 +78,7 @@ align-items: center;
 
 .dropdown{
   position: absolute;
+  
   min-width: 148px;
   height: 420px;
   z-index: 2;
@@ -91,6 +92,7 @@ align-items: center;
   position: absolute;
   top: 31px;
   left: 0;
+  display: none;
   max-width: 148px;
   max-height: 380px;
   overflow-y: auto;
