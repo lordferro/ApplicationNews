@@ -19,6 +19,50 @@ import { setFavoritesInLocalStor } from './js/setFavoritesInLocalStore';
 import { setReadInLocalStor } from './js/setReadInLocalStore';
 import { changeSearchType } from './js/currentTypeOfSearch';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
+import { initializeApp } from 'firebase/app';
+import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
+
+const firebaseConfig = {
+  apiKey: 'AIzaSyDPeYsfpe9V089GbtqhX70XcfdwNsSZDt8',
+  authDomain: 'applicationnews-fedor.firebaseapp.com',
+  projectId: 'applicationnews-fedor',
+  storageBucket: 'applicationnews-fedor.appspot.com',
+  messagingSenderId: '178016847755',
+  appId: '1:178016847755:web:bb274798374f4d6d8c518e',
+  measurementId: 'G-WSG1STJ0EF',
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+
+document
+  .getElementById('signin-form--mobile')
+  .addEventListener('submit', onSubmit);
+
+function onSubmit(evt) {
+  evt.preventDefault()
+  const email = evt.target.elements.signinEmail.value;
+  const password = evt.target.elements.signinPassword.value;
+  
+  createUserWithEmailAndPassword(auth, email, password)
+    .then(userCredential => {
+      // Signed in
+      const user = userCredential.user;
+      console.log(user);
+    })
+    .catch(error => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      console.log(errorCode);
+      console.log(errorMessage);
+      // ..
+    });
+}
+
+
+
+
 
 const btnSearch = document.querySelector('.search_mob_btn');
 

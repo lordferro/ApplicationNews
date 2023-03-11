@@ -20,7 +20,7 @@ export const categRefs = {
 if (categRefs.currentPage === 'index') {
   document.addEventListener('DOMContentLoaded', getSectionListData);
 
-  window.onresize = debounce(onResize, 100, { trailing: false, leading: true });
+  window.onresize = debounce(onResize, 200, { trailing: false, leading: true });
 
   categRefs.categsBlockEL.addEventListener('click', activeBtnColorHandler);
   categRefs.categsBlockEL.addEventListener('click', onCategoryClick);

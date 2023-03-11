@@ -1,7 +1,5 @@
 @import '~node_modules/modern-normalize/modern-normalize.css';
-body {
 
-}
 a {
     text-decoration: none;
 }
@@ -127,4 +125,14 @@ p {
 
 .switch_input:checked+.switch_slider::before {
     list-style-type: none;
+}
+
+.auth-form--mobile{
+    display: flex;
+}
+
+.user-auth--mobile{
+    fill:#5f6775 ;
+    stroke:#5f6775 ;
+    margin-left: 10px;
 }
