@@ -85,6 +85,7 @@
   background-color: #f4f4f4;
   transition: background-color 0.25s ease-in;
   border-radius: 2px;
+  cursor: pointer;
 
   &:hover {
     background-color: #4440f7;
@@ -124,7 +125,8 @@
 }
 
 .hide {
-  display: none;
+  opacity: 0.5;
+  pointer-events:none;
 }
 
 .disabled-arrow {

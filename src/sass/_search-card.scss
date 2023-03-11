@@ -4,6 +4,10 @@
   position: relative;
   margin-bottom: 28px;
 
+  &:hover{
+    transform:scale(1.02)
+  }
+
   @include tablet {
     width: 353px;
     height: 675px;
