@@ -57,13 +57,16 @@ let resultsArr = [];
 // приносить список тем
 function getSectionList(e) {
   e.preventDefault();
-  newsFetchApi.fetchSectionList().then(({ data: { results } }) => {
-    results.forEach(({ section, display_name }) => {
-      // деструктурував необхідні данні для розмітки.
-      const sectionName = section;
-      const displayName = display_name;
-    });
-  });
+  newsFetchApi
+    .fetchSectionList()
+    .then(({ data: { results } }) => {
+      results.forEach(({ section, display_name }) => {
+        // деструктурував необхідні данні для розмітки.
+        const sectionName = section;
+        const displayName = display_name;
+      });
+    })
+    .catch(() => Notify.failure('Server is busy at this moment'));
 }
 
 if (!localStorage.getItem('searchQueryFromFavorites')) {
@@ -130,10 +133,11 @@ export function getPopularNews() {
         }
       }
     })
-    .catch(error => Notify.failure('Server is busy at this moment'));
+    .catch(error => {
+      console.log(error);
+      Notify.failure('Server is busy at this moment');
+    });
 }
-
-// categRefs.categsBlockEL.removeEventListener('click', onCategoryClick)
 
 // приносить дані новин по категоріям
 export function onCategoryClick(evt) {
@@ -172,6 +176,7 @@ export function onCategoryClick(evt) {
         newsContainerRef.innerHTML = '';
         document.querySelector('.without-news_container').style.display =
           'block';
+        pagRefs.next.classList.add('hide');
       } else {
         categoryNewsPagination.resultsArr = [];
         pagRefs.prev.removeEventListener('click', onPaginationPopularPrevClick);
@@ -205,7 +210,7 @@ export function onCategoryClick(evt) {
         }
       }
     })
-    .catch(error => console.log(error.response.statusText));
+    .catch(error => Notify.failure('Server is busy at this moment'));
 }
 
 searchInput.addEventListener('submit', onSearchInputClick);
@@ -301,7 +306,7 @@ export function onSearchInputClick(event) {
         pagRefs.next.classList.remove('hide');
       }
     })
-    .catch(error => console.log(error));
+    .catch(error => Notify.failure('Server is busy at this moment'));
 }
 
 //============= перемикач теми початок ==========
