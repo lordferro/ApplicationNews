@@ -127,7 +127,7 @@ export function getPopularNews() {
         } else {
           const markupAllPopular = popularNewsPagination.getMarkupAll();
           populateNews(markupAllPopular);
-           pagRefs.next.classList.remove('hide');
+          pagRefs.next.classList.remove('hide');
         }
       }
     })
@@ -138,17 +138,13 @@ export function getPopularNews() {
 
 // приносить дані новин по категоріям
 export function onCategoryClick(evt) {
-
- searchInput.reset();
+  searchInput.reset();
   document.querySelector('.without-news_container').style.display = 'none';
   // текущий поиск - по категориям
   changeSearchType('category');
 
   newsFetchApi.offset = 0;
   categoryNewsPagination.resetPage();
-
-  // evt.preventDefault();
-  // тут треба записати значення обраної категорії з події на яку кнопку клацнули
 
   // add by Volyanskiy start
   const target = evt.target;
@@ -165,7 +161,6 @@ export function onCategoryClick(evt) {
   newsFetchApi
     .fetchBySection()
     .then(({ data }) => {
-
       pagRefs.prev.removeEventListener('click', onPaginationCategoryPrevClick);
       pagRefs.next.removeEventListener('click', onPaginationCategoryNextClick);
       //   загальна кількість знайдених новин, тут она врёт, на самом деле приходит меньше чем есть.
@@ -199,8 +194,16 @@ export function onCategoryClick(evt) {
         } else {
           categoryNewsPagination.resultsArr = resultsArr;
         }
-        const markupAllCategory = categoryNewsPagination.getMarkupAll();
-        populateNews(markupAllCategory);
+        if (categoryNewsPagination.resultsArr.length === 0) {
+          newsContainerRef.innerHTML = '';
+          document.querySelector('.without-news_container').style.display =
+            'block';
+          pagRefs.next.classList.add('hide');
+        } else {
+          const markupAllCategory = categoryNewsPagination.getMarkupAll();
+          populateNews(markupAllCategory);
+          pagRefs.next.classList.remove('hide');
+        }
       }
     })
     .catch(error => console.log(error.response.statusText));
@@ -210,11 +213,17 @@ searchInput.addEventListener('submit', onSearchInputClick);
 
 // приносить дані за пошуковим запитом
 export function onSearchInputClick(event) {
-   pagRefs.next.classList.add('hide');
+  // убираем выбранную категорию
+  const buttons = document.querySelectorAll('.section-btn, .other-btn');
+  buttons.forEach(button => {
+    button.classList.remove('btn-active');
+  });
+
+  pagRefs.next.classList.add('hide');
   const evt = event;
   // текущий поиск - по ключевому слову
   changeSearchType('searchInput');
-
+  document.querySelector('.without-news_container').style.display = 'none';
   if (localStorage.getItem('searchQueryFromFavorites') === null) {
     if (evt.target.className === 'search_form') {
       // если не нашли новостей, а потом ввели нормальный запрос, делаем заново  display none
@@ -226,7 +235,7 @@ export function onSearchInputClick(event) {
     newsFetchApi.resetPage();
     document.querySelector('.without-news_container').style.display = 'none';
     pagRefs.next.classList.add('hide');
-     pagRefs.prev.classList.add('hide');
+    pagRefs.prev.classList.add('hide');
   } else {
     newsFetchApi.searchQuery = localStorage.getItem('searchQueryFromFavorites');
   }
@@ -290,7 +299,7 @@ export function onSearchInputClick(event) {
         // ++++++++++++++++++++++
         const markupAllSearch = searchNewsPagination.getMarkupAll();
         populateNews(markupAllSearch);
-         pagRefs.next.classList.remove('hide');
+        pagRefs.next.classList.remove('hide');
       }
     })
     .catch(error => console.log(error));
