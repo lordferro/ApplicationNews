@@ -1,5 +1,7 @@
 import { NewsFetchApi } from './newsApi';
 import { onCategoryClick } from '../index';
+import { debounce } from 'debounce';
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
 const newsFetchApi = new NewsFetchApi();
 
@@ -18,6 +20,8 @@ export const categRefs = {
 if (categRefs.currentPage === 'index') {
   document.addEventListener('DOMContentLoaded', getSectionListData);
 
+  window.onresize = debounce(onResize, 100, { trailing: false, leading: true });
+
   categRefs.categsBlockEL.addEventListener('click', activeBtnColorHandler);
   categRefs.categsBlockEL.addEventListener('click', onCategoryClick);
   categRefs.categsBlockEL.addEventListener('mouseenter', onDropdownItemClick);
@@ -35,7 +39,7 @@ export async function getSectionListData() {
 
     createSectionMarkup(sectionName, displayName);
   } catch (error) {
-    console.log(error.message);
+    Notify.failure("Server is busy at this moment")
   }
 }
 
@@ -93,16 +97,6 @@ export function createSectionMarkup(sectionName, displayName) {
   renderSectionMarkup(sectionMarkup);
 }
 
-// svg to put in ".other-btn"
-// <svg width="24" heigth="24" class="svg-item close">
-// <use
-//   href="/src/images/symbol-defs.svg#icon-Vector-Down"
-//   width="24"
-//   heigth="24">
-// </use>
-// </svg>
-// end
-
 export function renderSectionMarkup(sectionMarkup) {
   categRefs.categsBlockEL.innerHTML = sectionMarkup;
 
@@ -112,7 +106,7 @@ export function renderSectionMarkup(sectionMarkup) {
   categRefs.sectionButtons = document.querySelectorAll('.section-btn');
   categRefs.dropdownContent = document.querySelector('.dropdown-content');
   categRefs.dropdown = document.querySelector('.dropdown-content');
-  categRefs.dropdown = document.querySelector('.dropdown')
+  categRefs.dropdown = document.querySelector('.dropdown');
 }
 
 // ---------відкриття і закриття меню---------
@@ -148,6 +142,8 @@ export function activeBtnColorHandler(evt) {
 
 export function onDropdownItemClick(evt) {
   categRefs.dropdownContent.classList.add('dropdown-content-open');
-  // categRefs.categsListBtn.textContent=target.textContent;
-  // onCategListClose();
+}
+
+function onResize() {
+getSectionListData();
 }

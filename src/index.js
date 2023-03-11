@@ -16,10 +16,9 @@ import { onPaginationSearchNextClick } from './js/paginationSearch';
 import { publishedDateFormatter } from './js/publishedDateFormatter';
 import { onSearchClick } from './js/header';
 import { setFavoritesInLocalStor } from './js/setFavoritesInLocalStore';
-
 import { setReadInLocalStor } from './js/setReadInLocalStore';
-
 import { changeSearchType } from './js/currentTypeOfSearch';
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
 const btnSearch = document.querySelector('.search_mob_btn');
 
@@ -131,7 +130,7 @@ export function getPopularNews() {
         }
       }
     })
-    .catch(error => console.log(error));
+    .catch(error => Notify.failure('Server is busy at this moment'));
 }
 
 // categRefs.categsBlockEL.removeEventListener('click', onCategoryClick)
